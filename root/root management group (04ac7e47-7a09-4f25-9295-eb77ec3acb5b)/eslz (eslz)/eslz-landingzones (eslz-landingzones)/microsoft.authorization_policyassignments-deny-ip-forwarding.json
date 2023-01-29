@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deny-IP-Forwarding",
+      "apiVersion": "2022-06-01",
+      "location": "centralus",
+      "identity": {
+        "PrincipalId": null,
+        "TenantId": null,
+        "Type": "None"
+      },
+      "properties": {
+        "Description": "This policy denies the network interfaces which enabled IP forwarding. The setting of IP forwarding disables Azure's check of the source and destination for a network interface. This should be reviewed by the network security team.",
+        "DisplayName": "Network interfaces should disable IP forwarding",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": [],
+        "NotScopes": [],
+        "Parameters": {},
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/88c0b9da-ce96-4b03-9635-f29a937e2900",
+        "Scope": "/providers/Microsoft.Management/managementGroups/eslz-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}

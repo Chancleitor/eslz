@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-AzActivity-Log",
+      "apiVersion": "2022-06-01",
+      "location": "centralus",
+      "identity": {
+        "PrincipalId": "27b92e3f-9693-4cec-bd83-967235364db4",
+        "TenantId": "04ac7e47-7a09-4f25-9295-eb77ec3acb5b",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Ensures that Activity Log Diagnostics settings are set to push logs into Log Analytics workspace.",
+        "DisplayName": "Deploy Diagnostic Settings for Activity Log to Log Analytics workspace",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": [],
+        "NotScopes": [],
+        "Parameters": {
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "logAnalytics": {
+            "value": "/subscriptions/5a720b70-7d81-4557-bb6d-1ed2d0c7f4e4/resourceGroups/eslz-mgmt/providers/Microsoft.OperationalInsights/workspaces/eslz-law"
+          }
+        },
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2465583e-4e78-4c15-b6be-a36cbc7c8b0f",
+        "Scope": "/providers/Microsoft.Management/managementGroups/eslz"
+      }
+    }
+  ],
+  "outputs": {}
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "name": "ba6962f6-18ff-5959-8137-70e37652b0bc",
+      "apiVersion": "2022-04-01",
+      "properties": {
+        "DisplayName": "Enable-DDoS-VNET",
+        "ObjectType": "ServicePrincipal",
+        "PrincipalId": "76975252-1b61-4606-98af-fa6e72d2aaf8",
+        "RoleDefinitionId": "/providers/Microsoft.Authorization/RoleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7",
+        "RoleDefinitionName": "Network Contributor"
+      }
+    }
+  ],
+  "outputs": {}
+}

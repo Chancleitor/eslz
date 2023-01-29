@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-ASC-Monitoring",
+      "apiVersion": "2022-06-01",
+      "location": "centralus",
+      "identity": {
+        "PrincipalId": null,
+        "TenantId": null,
+        "Type": "None"
+      },
+      "properties": {
+        "Description": "Enable Monitoring in Microsoft Defender for Cloud.",
+        "DisplayName": "Enable Monitoring in Microsoft Defender for Cloud",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": [],
+        "NotScopes": [],
+        "Parameters": {},
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
+        "Scope": "/providers/Microsoft.Management/managementGroups/eslz"
+      }
+    }
+  ],
+  "outputs": {}
+}

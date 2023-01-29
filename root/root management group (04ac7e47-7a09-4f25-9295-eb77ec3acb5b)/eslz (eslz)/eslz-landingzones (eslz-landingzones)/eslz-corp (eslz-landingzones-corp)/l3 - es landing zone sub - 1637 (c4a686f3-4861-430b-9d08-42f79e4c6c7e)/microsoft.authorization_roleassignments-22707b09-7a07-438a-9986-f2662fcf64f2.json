@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "name": "22707b09-7a07-438a-9986-f2662fcf64f2",
+      "apiVersion": "2022-04-01",
+      "properties": {
+        "DisplayName": "https://azurehol1637.onmicrosoft.com/cloudlabs.ai/",
+        "ObjectType": "ServicePrincipal",
+        "PrincipalId": "b628051a-395e-49a6-a456-8fdf4e746a12",
+        "RoleDefinitionId": "/providers/Microsoft.Authorization/RoleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+        "RoleDefinitionName": "Owner"
+      }
+    }
+  ],
+  "outputs": {}
+}

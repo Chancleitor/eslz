@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "name": "0f1aff5c-c490-44b6-a794-14cd60efd597",
+      "apiVersion": "2022-04-01",
+      "properties": {
+        "DisplayName": "Domain Controller Services",
+        "ObjectType": "ServicePrincipal",
+        "PrincipalId": "8d016631-9391-4ff1-b130-fde4524c41ff",
+        "RoleDefinitionId": "/providers/Microsoft.Authorization/RoleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+        "RoleDefinitionName": "Contributor"
+      }
+    }
+  ],
+  "outputs": {}
+}

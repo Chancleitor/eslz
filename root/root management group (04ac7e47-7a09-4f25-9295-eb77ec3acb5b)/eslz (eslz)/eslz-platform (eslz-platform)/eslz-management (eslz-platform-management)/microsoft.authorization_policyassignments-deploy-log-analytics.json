@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-Log-Analytics",
+      "apiVersion": "2022-06-01",
+      "location": "centralus",
+      "identity": {
+        "PrincipalId": "8f1dc9c9-4701-4570-a5b6-98bd1aae36e7",
+        "TenantId": "04ac7e47-7a09-4f25-9295-eb77ec3acb5b",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Deploy-Log-Analytics.",
+        "DisplayName": "Deploy-Log-Analytics",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": [],
+        "NotScopes": [],
+        "Parameters": {
+          "automationAccountName": {
+            "value": "eslz-automation-account"
+          },
+          "automationRegion": {
+            "value": "centralus"
+          },
+          "dataRetention": {
+            "value": "30"
+          },
+          "effect": {
+            "value": "DeployIfNotExists"
+          },
+          "rgName": {
+            "value": "eslz-mgmt"
+          },
+          "sku": {
+            "value": "pergb2018"
+          },
+          "workspaceName": {
+            "value": "eslz-law"
+          },
+          "workspaceRegion": {
+            "value": "centralus"
+          }
+        },
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8e3e61b3-0b32-22d5-4edf-55f87fdb5955",
+        "Scope": "/providers/Microsoft.Management/managementGroups/eslz-platform-management"
+      }
+    }
+  ],
+  "outputs": {}
+}

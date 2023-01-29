@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deny-Subnet-Without-Nsg",
+      "apiVersion": "2022-06-01",
+      "location": "centralus",
+      "identity": {
+        "PrincipalId": null,
+        "TenantId": null,
+        "Type": "None"
+      },
+      "properties": {
+        "Description": "This policy denies the creation of a subnet without a Network Security Group to protect traffic across subnets.",
+        "DisplayName": "Subnets should have a Network Security Group",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": [],
+        "NotScopes": [],
+        "Parameters": {
+          "effect": {
+            "value": "Deny"
+          }
+        },
+        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/eslz/providers/Microsoft.Authorization/policyDefinitions/Deny-Subnet-Without-Nsg",
+        "Scope": "/providers/Microsoft.Management/managementGroups/eslz-landingzones"
+      }
+    }
+  ],
+  "outputs": {}
+}
