@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Management/managementGroups/subscriptions",
+      "name": "eslz-landingzones-corp/c4a686f3-4861-430b-9d08-42f79e4c6c7e",
+      "apiVersion": "2021-04-01",
+      "scope": "/"
+    }
+  ],
+  "outputs": {}
+}

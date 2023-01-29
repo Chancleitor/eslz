@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "name": "7f23bcd7-a81b-50d7-9cc2-b5da23d4c81b",
+      "apiVersion": "2022-04-01",
+      "properties": {
+        "DisplayName": "Deploy-MDFC-Config",
+        "ObjectType": "ServicePrincipal",
+        "PrincipalId": "e0518148-8eb6-483b-b9aa-77312ec85d63",
+        "RoleDefinitionId": "/providers/Microsoft.Authorization/RoleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+        "RoleDefinitionName": "Owner"
+      }
+    }
+  ],
+  "outputs": {}
+}

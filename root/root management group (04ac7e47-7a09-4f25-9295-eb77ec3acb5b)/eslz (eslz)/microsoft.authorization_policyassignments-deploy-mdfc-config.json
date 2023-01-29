@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-MDFC-Config",
+      "apiVersion": "2022-06-01",
+      "location": "centralus",
+      "identity": {
+        "PrincipalId": "e0518148-8eb6-483b-b9aa-77312ec85d63",
+        "TenantId": "04ac7e47-7a09-4f25-9295-eb77ec3acb5b",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Description": "Deploy Microsoft Defender for Cloud configuration and Security Contacts",
+        "DisplayName": "Deploy Microsoft Defender for Cloud configuration",
+        "EnforcementMode": "Default",
+        "NonComplianceMessages": [],
+        "NotScopes": [],
+        "Parameters": {
+          "ascExportResourceGroupLocation": {
+            "value": "centralus"
+          },
+          "ascExportResourceGroupName": {
+            "value": "asc-export-alz"
+          },
+          "emailSecurityContact": {
+            "value": "security_contact@replace_me.com"
+          },
+          "enableAscForAppServices": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForArm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForContainers": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForDns": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForKeyVault": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForOssDb": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForServers": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForSql": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForSqlOnVm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForStorage": {
+            "value": "DeployIfNotExists"
+          },
+          "logAnalytics": {
+            "value": "/subscriptions/5a720b70-7d81-4557-bb6d-1ed2d0c7f4e4/resourceGroups/eslz-mgmt/providers/Microsoft.OperationalInsights/workspaces/eslz-law"
+          }
+        },
+        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/eslz/providers/Microsoft.Authorization/policySetDefinitions/Deploy-MDFC-Config",
+        "Scope": "/providers/Microsoft.Management/managementGroups/eslz"
+      }
+    }
+  ],
+  "outputs": {}
+}

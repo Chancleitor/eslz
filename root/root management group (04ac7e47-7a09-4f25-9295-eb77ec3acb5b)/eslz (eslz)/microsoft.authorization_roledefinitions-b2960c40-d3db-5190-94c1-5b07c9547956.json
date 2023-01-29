@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "name": "b2960c40-d3db-5190-94c1-5b07c9547956",
+      "apiVersion": "2022-05-01-preview",
+      "properties": {
+        "RoleName": "Security operations (SecOps)",
+        "Description": "Security administrator role with a horizontal view across the entire Azure estate and the Azure Key Vault purge policy",
+        "AssignableScopes": [
+          "/providers/Microsoft.Management/managementGroups/eslz"
+        ],
+        "Permissions": [
+          {
+            "Actions": [
+              "*/read",
+              "*/register/action",
+              "Microsoft.KeyVault/locations/deletedVaults/purge/action",
+              "Microsoft.PolicyInsights/*",
+              "Microsoft.Authorization/policyAssignments/*",
+              "Microsoft.Authorization/policyDefinitions/*",
+              "Microsoft.Authorization/policyExemptions/*",
+              "Microsoft.Authorization/policySetDefinitions/*",
+              "Microsoft.Insights/alertRules/*",
+              "Microsoft.Resources/deployments/*",
+              "Microsoft.Security/*",
+              "Microsoft.Support/*"
+            ],
+            "DataActions": [],
+            "NotActions": [],
+            "NotDataActions": []
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": {}
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "name": "996674fa-7677-4bac-8a06-77034faa2303",
+      "apiVersion": "2022-04-01",
+      "properties": {
+        "DisplayName": "RPSaaS Meta RP",
+        "ObjectType": "ServicePrincipal",
+        "PrincipalId": "8051ace5-488b-477e-b768-3e18bbeb9d70",
+        "RoleDefinitionId": "/providers/Microsoft.Authorization/RoleDefinitions/c7393b34-138c-406f-901b-d8cf2b17e6ae",
+        "RoleDefinitionName": "Managed Application Operator Role"
+      }
+    }
+  ],
+  "outputs": {}
+}

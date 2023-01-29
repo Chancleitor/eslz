@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "input": {
+      "value": {
+        "Name": "CloudLabs Tag Replication",
+        "ResourceType": "Microsoft.Authorization/policyDefinitions",
+        "Properties": {
+          "Description": null,
+          "DisplayName": "CloudLabs: Tag Replication - v.001",
+          "Metadata": {
+            "category": "CloudLabs"
+          },
+          "Mode": "All",
+          "Parameters": null,
+          "PolicyRule": {
+            "if": {
+              "allOf": [
+                {
+                  "field": "tags['LaunchType']",
+                  "exists": "false"
+                },
+                {
+                  "value": "[resourceGroup().tags['LaunchType']]",
+                  "exists": "true"
+                },
+                {
+                  "value": "[resourceGroup().tags['LaunchType']]",
+                  "equals": "ON_DEMAND_LAB"
+                }
+              ]
+            },
+            "then": {
+              "effect": "append",
+              "details": [
+                {
+                  "field": "tags['LaunchType']",
+                  "value": "[resourceGroup().tags['LaunchType']]"
+                },
+                {
+                  "field": "tags['DeploymentId']",
+                  "value": "[resourceGroup().tags['DeploymentId']]"
+                },
+                {
+                  "field": "tags['LaunchId']",
+                  "value": "[resourceGroup().tags['LaunchId']]"
+                },
+                {
+                  "field": "tags['TemplateId']",
+                  "value": "[resourceGroup().tags['TemplateId']]"
+                },
+                {
+                  "field": "tags['TenantId']",
+                  "value": "[resourceGroup().tags['TenantId']]"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
